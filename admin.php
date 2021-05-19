@@ -43,18 +43,16 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
             </div>
              <!--CONTENEDOR ORDENES DE SERVICIO-->
             <a href="ods.php" class="taco tacoC "  >
-            
                 <div class="taco-contador" >
-                  <span class="taco-titulo">
-                    Ordenes De Servicio.
-					
-                </span>      
+                    <span class="taco-titulo">
+                        Ordenes De Servicio.
+                    </span>      
                 </div>
-                <div class="taco-dato"><br>
+                <div class="taco-dato">
+                    <br>
 					Modulo Principal.<br>
 					Imprimir Ordenes De Servicios.<br>
-                    Estado y Ubicacion Del Equipo.
-                    
+                    Estado de servicios.
                     <img alt="imglogon" class="imagen-tacoA" src="uploads/empresa/6.png">
                  
                 </div>
@@ -62,7 +60,7 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
                
             </a>
              <!--FIN CONTENEDOR ORDENES DE SERVICIO-->
-
+            <!--
             <a href="egresos.php" class="taco tacoC" >
                 <div class="taco-contador" >
                   <span class="taco-titulo" >
@@ -75,6 +73,7 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
 					<img alt="imglogon" class="imagen-tacoA" src="uploads/empresa/3.png">
                 </div>
             </a>
+            -->
             <a href="cliente.php" class="taco tacoC">
                 <div class="taco-contador"  >
                   <span class="taco-titulo">
@@ -87,6 +86,7 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
                     <img alt="imglogon" class="imagen-tacoA" src="uploads/empresa/usuario.png">
               </div>
             </a>
+            <!--
             <a href="proveedores.php" class="taco tacoC" >
               
                 <div class="taco-contador" >
@@ -115,7 +115,7 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
                     <img alt="imglogon" class="imagen-tacoA" src="uploads/empresa/4.png">
                 </div>
             </a>
-			
+			-->
             <a href="panel.php" class="taco taco-imagenB">
                
                 <div class="taco-contador-orange">

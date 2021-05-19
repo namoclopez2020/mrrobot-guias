@@ -29,7 +29,7 @@
                 </div>
 
                 <span class="taco-titulo-principal">
-                    Modulo Principal Frank
+                    Modulo Principal
                 </span>
                
             </a>
@@ -41,7 +41,7 @@
                 </div>
 
                 <span class="taco-titulo-principal">
-                   Estatus y ubicación del equipo
+                   Estatus de servicios
                 </span>
             </a>
 			

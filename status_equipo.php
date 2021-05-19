@@ -1,6 +1,6 @@
 <?php
 
-	$page_title = 'Status de equipo';
+	$page_title = 'Status de servicios';
   	require_once('includes/load.php');
 	// Checkin What level user has permission to view this page
    	page_require_level(3);
@@ -23,14 +23,14 @@
 								<div class="container-fluid" >
 									<?php echo display_msg($msg);?>
 								</div>
-								<h4 class="modal-title" id="myModalLabel">Buscar equipos</h4>
+								<h4 class="modal-title" id="myModalLabel">Buscar servicios</h4>
 							</div>
 							<div class="modal-body">
 								<div class="form-horizontal">
 									<div class="form-group">
 										<div class="container-fluid">
 											<div class="table-responsive" >
-												<table class="table"  id="" border="0" style="">
+												<table class="table"  id="table" border="0" style="">
 													<thead class="warning">
 														<th> Correlativo</th>
 														<th> DNI</th>
