@@ -20,11 +20,11 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="mPrincipal.php">Nueva guia</a></li>
-          <li><a href="status_equipo.php">Status equipo</a></li>
+          <li><a href="status_equipo.php">Status servicios</a></li>
         </ul>
       </li>
       
-      <li class="dropdown">
+      <!-- <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">VENTAS
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -57,7 +57,7 @@
           <li><a href="./cierre_de_caja.php">Cierre De Caja Diario</a></li>
           <li><a href="./caja_actual.php">Caja Actual de Ventas</a></li>
         </ul>
-      </li>
+      </li> -->
     </ul>
     <ul class="nav navbar-nav navbar-right">
 
