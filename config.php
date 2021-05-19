@@ -6,3 +6,4 @@
   define( 'DB_NAME', 'jul09mrd_tecnek' );        // Set database name
 
 ?>
+ 
