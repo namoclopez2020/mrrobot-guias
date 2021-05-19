@@ -52,7 +52,7 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
                     <br>
 					Modulo Principal.<br>
 					Imprimir Ordenes De Servicios.<br>
-                    Estado y Ubicacion Del Equipo.
+                    Estado de servicios.
                     <img alt="imglogon" class="imagen-tacoA" src="uploads/empresa/6.png">
                  
                 </div>

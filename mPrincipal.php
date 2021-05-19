@@ -216,24 +216,24 @@
 					<div class="taco-mPrincipal10 taco-aqua">
 						<div class="taco-dato5" >
 							<table class="tabla5" >
-								<tr>
+								<!-- <tr>
 									<td class="celda">COSTO DE REVISIÓN</td>
 									<td class="celda">
 										<input type="text" name="revision" id="revision" class ="textbox1" value="<?php echo $revision?>" onChange="calcular()" required>
 									</td>
-								</tr>
+								</tr> -->
 								<tr>
 									<td class="celda">COSTO DEL SERVICIO </td>
 									<td class="Celda">
-										<input type="text" name="costo" id="costo" class ="textbox1" value="<?php echo $costo_servicio?>" onchange="calcular()" required>
+										<input type="text" name="costo" id="costo" class ="textbox1" style="margin-bottom:20px" value="<?php echo $costo_servicio?>" onchange="calcular()" required>
 									</td>
 								</tr>
-								<tr>
+								<!-- <tr>
 									<td class="celda">COSTO DEL REPUESTO</td>
 									<td class="celda">
 										<input type="text" name="repuesto" id="repuesto" class ="textbox1" value="<?php echo $repuesto?>" onChange="calcular()" required>
 									</td>
-								</tr>
+								</tr> -->
 								<tr>
 									<td class="Celda">ADELANTO</td>
 									<td class="celda">
