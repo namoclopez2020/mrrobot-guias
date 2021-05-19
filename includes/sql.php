@@ -858,7 +858,4 @@ function find_all_sucursales_by_user(){
 		$result = find_by_sql($sql);
 		return $result;
   }
-  
-  find_all_proveedores_by_sucursal
-
 ?>
