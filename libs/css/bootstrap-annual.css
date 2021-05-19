@@ -48,9 +48,7 @@ label {
     margin-left: 10%;
     width: 95%;
     height: 120%;
-    margin-top: 0px;
     margin-bottom: 5px;
-    padding-top: 70px;
 }
 
 .menu-inicial .mnu-container {
@@ -315,9 +313,8 @@ label {
 
 .menu-inicial .taco-mPrincipal .textarea2 {
     color: black;
-    height: 50px;
+    height: 70px;
     width: 240px;
-    align: center;
     padding: 0px 0px 0px 0px;
     font-size: 12px;
     min-width: 10px;
@@ -372,6 +369,8 @@ label {
     border: none;
     outline: none;
     width: 100%;
+    height: 100%;
+    vertical-align: middle;
 }
 
 .menu-inicial .taco-mPrincipal .taco-dato1 {
@@ -421,7 +420,8 @@ label {
 
 .form-equipo {
     color: white;
-    padding: 10px width: 100%;
+    padding: 10px;
+    width: 100%;
     height: 100%;
 }
 
@@ -685,16 +685,6 @@ label {
     height: 100%;
     width: 100%;
     margin-right: 10px;
-    align: center;
-}
-
-.menu-inicial .taco-mPrincipal3 .imagen-taco {
-    height: 20%;
-    width: 100px;
-    margin-right: 10px;
-    align: center;
-    padding-top: 0px;
-    padding-right: 10px;
 }
 
 .menu-inicial .taco .imagen-tacoB {
@@ -835,10 +825,8 @@ label {
 
 @media (max-width: 480px) {
     .menu-inicial {
-        margin-top: 0px;
         margin-right: 10%;
         margin-bottom: 0px;
-        padding-top: 80px;
         width: 100%;
         height: 100%;
     }
@@ -902,9 +890,8 @@ label {
     }
     .menu-inicial .taco-mPrincipal .textarea2 {
         color: black;
-        height: 60px;
+        height: 70px;
         width: 100%;
-        align: center;
         padding: 10px 10px 10px 10px;
         font-size: 12px;
         outline: none;
@@ -960,14 +947,15 @@ label {
         border: none;
         outline: none;
         width: 100%;
+        height: 100%;
+        vertical-align: middle;
     }
     .menu-inicial .taco-mPrincipal3 .imagen-taco {
-        height: 80px;
-        width: 73px;
-        align: center;
-        padding-right: 10px;
+        height: 70%;
+        width: 100%;
+        /* padding-right: 10px;
         padding-left: 10px;
-        padding-top: 10px;
+        padding-top: 10px; */
     }
     .tabla4 {
         color: white;
