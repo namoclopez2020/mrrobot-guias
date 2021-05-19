@@ -17,6 +17,7 @@
 			$direccion=$data['direccion_cliente'];
 			$email=$data['email_cliente'];
 			$descripcion=$data['descrip'];
+			$descripcion=str_replace("<br/>","\n",$descripcion);
 			$descripcion=str_replace("<br>","\n",$descripcion);
 			$cargador=$data['deja_cargador'];
 			$falla=$data['falla'];
@@ -109,8 +110,8 @@
 									<td class="celda"><input type="text" name="direccion" id="direccion"  value="<?php echo $direccion;?>" class ="textbox1" readonly></td>
 								</tr>
 								<tr>
-									<td class="celda">Email: </td>
-									<td class="celda"><input type="text" name="email" id="email" value="<?php echo $email?>" class ="textbox1" readonly></td>
+									<td class="celda">Edad: </td>
+									<td class="celda"><input type="text" name="edad" id="edad" value="<?php echo $edad?>" class ="textbox1" readonly></td>
 								</tr>
 							</table>
 						</div>
@@ -216,24 +217,24 @@
 					<div class="taco-mPrincipal10 taco-aqua">
 						<div class="taco-dato5" >
 							<table class="tabla5" >
-								<!-- <tr>
+								<tr  style="display:none">
 									<td class="celda">COSTO DE REVISIÓN</td>
 									<td class="celda">
-										<input type="text" name="revision" id="revision" class ="textbox1" value="<?php echo $revision?>" onChange="calcular()" required>
+										<input type="text" name="revision" id="revision" class ="textbox1" value="0" onChange="calcular()" required>
 									</td>
-								</tr> -->
+								</tr>
 								<tr>
 									<td class="celda">COSTO DEL SERVICIO </td>
 									<td class="Celda">
 										<input type="text" name="costo" id="costo" class ="textbox1" style="margin-bottom:20px" value="<?php echo $costo_servicio?>" onchange="calcular()" required>
 									</td>
 								</tr>
-								<!-- <tr>
+								<tr style="display:none">
 									<td class="celda">COSTO DEL REPUESTO</td>
 									<td class="celda">
-										<input type="text" name="repuesto" id="repuesto" class ="textbox1" value="<?php echo $repuesto?>" onChange="calcular()" required>
+										<input type="text" name="repuesto" id="repuesto" class ="textbox1" value="0" onChange="calcular()" required>
 									</td>
-								</tr> -->
+								</tr>
 								<tr>
 									<td class="Celda">ADELANTO</td>
 									<td class="celda">
@@ -268,16 +269,15 @@
 						<div class="table-responsive"   style="height: 100%;border: 0px">
 							<table class="table"  id="example" border="0" style="font-size: 12px;background-color:white;font-weight: bold">
 								<thead style="background-color: #4F4F4F;color:white">
-										<th  class="text-center" style="width: 5%;"> Correlativo</th>
-										<th  class="text-center" style="width: 5%; "> DNI</th>
+										<th class="text-center" style="width: 5%;"> Correlativo</th>
+										<th class="text-center" style="width: 5%; "> DNI</th>
 										<th class="text-center" style="width: 5%;">Nombre </th>
 										<th class="text-center" style="width: 5%;"> Telefono </th>
 										<th class="text-center" style="width: 5%;"> Direccion </th>
-										<th class="text-center" style="width: 50%;"> Equipo </th>
-										<th class="text-center" style="width: 5%;"> Falla </th>
-										<th class="text-center" style="width: 5%;"> Status </th>
+										<th class="text-center" style="width: 20%;"> Estado Paciente </th>
+										<th class="text-center" style="width: 35%;"> Servicio a realizar</th>
+										<!-- <th class="text-center" style="width: 5%;"> Status Servicio </th> -->
 										<th class="text-center" style="width: 5%;"> Fecha </th>
-										<th class="text-center" style="width: 10%;"> Costo por revision</th>
 										<th class="text-center" style="width: 10%;"> Total</th>
 								</thead>
 								</tbody>
@@ -295,18 +295,18 @@
 											
 											$falla=$row['falla'];
 											$status=$row['status'];
-											if($status==0){
-												$status_value="Anulado";
-											}
-											elseif($status==1){
-												$status_value="REPARACION O MANTENIMIENTO";
-											}
-											elseif($status==2){
-												$status_value="LISTO PARA ENTREGAR";
-											}
-											elseif($status==3){
-												$status_value="ENTREGADO";
-											}
+											// if($status==0){
+											// 	$status_value="Anulado";
+											// }
+											// elseif($status==1){
+											// 	$status_value="REPARACION O MANTENIMIENTO";
+											// }
+											// elseif($status==2){
+											// 	$status_value="LISTO PARA ENTREGAR";
+											// }
+											// elseif($status==3){
+											// 	$status_value="ENTREGADO";
+											// }
 											
 											$direccion=$row['direccion_cliente'];
 											$fecha=$row['fecha'];
@@ -320,9 +320,8 @@
 											echo "<td class=\"text-center\">".remove_junk($direccion)."</td>";
 											echo "<td class=\"text-center\" style=\"width: 50%;\">".remove_junk($descripcion)."</td>";
 											echo "<td class=\"text-center\">".remove_junk($falla)."</td>";	
-											echo "<td class=\"text-center\">".remove_junk($status_value)."</td>";
+											// echo "<td class=\"text-center\">".remove_junk($status_value)."</td>";
 											echo "<td class=\"text-center\">".read_date($fecha)."</td>";
-											echo "<td class=\"text-center\">".$revision."</td>";
 											echo "<td class=\"text-center\">".$total."</td>";
 											echo "</tr>";
 										
@@ -341,7 +340,6 @@
 		<script type="text/javascript" src="js/nueva_factura.js"></script>
 		<script>
 			$(document).ready(function() {
-
 				$('#nombre_cliente').autocomplete({
 					source: function(request, response){
 						$.ajax({
@@ -357,14 +355,13 @@
 					minLength: 1,
 					select: function(event,ui){
 						event.preventDefault();
-										$('#id_cliente').val(ui.item.id_cliente);
-										$('#nombre_cliente').val(ui.item.nombre_cliente);
-										$('#telefono').val(ui.item.telefono_cliente);
-										$('#email').val(ui.item.email_cliente);
-										$('#dni').val(ui.item.dni_cliente);
-										$('#direccion').val(ui.item.direccion_cliente);
-																		
-				
+							$('#id_cliente').val(ui.item.id_cliente);
+							$('#nombre_cliente').val(ui.item.nombre_cliente);
+							$('#telefono').val(ui.item.telefono_cliente);
+							$('#email').val(ui.item.email_cliente);
+							$('#dni').val(ui.item.dni_cliente);
+							$('#direccion').val(ui.item.direccion_cliente);
+							$('#edad').val(ui.item.edad_cliente);
 					}
 				});
 			

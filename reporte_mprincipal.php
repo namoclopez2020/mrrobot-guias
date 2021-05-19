@@ -90,9 +90,9 @@
 	//query para insertar en la tabla pagos_registro
 	$insertar_pago="INSERT INTO pagos_registro (id_correlativo_registro,pagado,fecha_pago,id_vendedor,sucursal_id) VALUES ('$numero_factura','$adelanto','$date','$id_vendedor','$id_sucursal')";
 	if(!$db->query($insertar_pago)){
-	?> 
-		<script>window.close();</script>
-	<?php
+		?> 
+			<script>window.close();</script>
+		<?php
 	}
 
 	$datos_cliente="SELECT * FROM cliente where id_cliente=$id_cliente";
@@ -103,15 +103,14 @@
 	$dni_cliente=$datos_cl['dni_cliente'];
 	$direccion_cliente=$datos_cl['direccion_cliente'];
 	$email_cliente=$datos_cl['email_cliente'];
+	$edad_cliente=$datos_cl['edad'];
 ?>
 
 <page backtop="15mm" backbottom="15mm" backleft="15mm" backright="15mm" style="font-size: 12pt; font-family: arial" >
-        <page_footer>
+    <page_footer>
         <table class="page_footer">
             <tr>
-
                 <td style="width: 50%; text-align: left">
-                    
                 </td>
                 <td style="width: 50%; text-align: right;">
                     &copy; <?php echo "Mr Robot "; echo  $anio=date('Y'); ?>
@@ -121,20 +120,15 @@
     </page_footer>
     <table cellspacing="0" style="width: 100%;">
         <tr>
-
             <td style="width: 23%; color: #444444;">
                 <img style="width: 100%;" src="uploads/empresa/<?php echo $ruta_logo?>" alt="Logo"><br>
-                
             </td>
 			<td style="width: 55%; color: #34495e;font-size:14px;text-align:center;padding:3% 10% 3% 4%">
                 <span style="color: #34495e;font-size:20px;font-weight:bold"> <?php echo $nombre_sucursal;?></span>
 				<br><?php echo $direccion_sucursal;?><br> 
-				
-				
-				RUC: <?php echo $ruc_sucursal;?>
-				<br>CEL: <?php echo $telefono_sucursal;?>
-				
-				 <br>EMAIL: <?php echo $email_sucursal;?>
+				RUC: <?php echo $ruc_sucursal;?><br>
+				CEL: <?php echo $telefono_sucursal;?><br>
+				EMAIL: <?php echo $email_sucursal;?>
             </td>
 			<td style="width: 35%;text-align:right; 	">
 			COMPROBANTE Nº <?php echo $numero_factura;?>
@@ -156,89 +150,66 @@
 			<span style="font-size: 15px;font-weight: bold">DNI:</span> <?php echo $dni_cliente;?> <br>
 			<span style="font-size: 15px;font-weight: bold">TLF:</span> <?php echo $telefono_cliente;?> <br>
 			<span style="font-size: 15px;font-weight: bold">Email:</span> <?php echo $email_cliente;?> <br>
+			<span style="font-size: 15px;font-weight: bold">Edad:</span> <?php echo $edad_cliente;?> <br>
 		   </td>
 			
         </tr>
 		
    
     </table>
-    
-       <br>
-		<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
-        <tr>
-           <td style="width:35%;" class='midnight-blue'>VENDEDOR</td>
-		  <td style="width:25%;" class='midnight-blue'>FECHA</td>
-		   <td style="width:40%;" class='midnight-blue'>FORMA DE PAGO</td>
-        </tr>
+	<br>
+	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
 		<tr>
-           <td style="width:35%;">
-			<?php 
-			echo $current_user['name'];
-			?>
-		   </td>
-		  <td style="width:25%;"><?php echo date("d/m/Y H:m:s");?></td>
-		   <td style="width:40%;" >
+			<td style="width:35%;" class='midnight-blue'>USUARIO</td>
+			<td style="width:25%;" class='midnight-blue'>FECHA</td>
+			<td style="width:40%;" class='midnight-blue'>FORMA DE PAGO</td>
+		</tr>
+		<tr>
+			<td style="width:35%;">
+				<?php echo $current_user['name']; ?>
+			</td>
+			<td style="width:25%;">
+				<?php echo date("d/m/Y H:m:s");?>
+			</td>
+			<td style="width:40%;" >
 				<?php 
-			   $condiciones=1;
-				if ($condiciones==1){echo "Efectivo";}
-				elseif ($condiciones==2){echo "Cheque";}
-				elseif ($condiciones==3){echo "Transferencia bancaria";}
-				elseif ($condiciones==4){echo "Crédito";}
+					$condiciones=1;
+					if ($condiciones==1){echo "Efectivo";}
+					elseif ($condiciones==2){echo "Cheque";}
+					elseif ($condiciones==3){echo "Transferencia bancaria";}
+					elseif ($condiciones==4){echo "Crédito";}
 				?>
-		   </td>
-        </tr>
-		
-        
-   
-    </table>
+			</td>
+		</tr>
+	</table>
 	<br>
 	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-           <td style="width:35%;" class='midnight-blue'>DESCRIPCION DEL EQUIPO</td>
-		  <td style="width:30%;" class='midnight-blue'>SERVICIO A REALIZAR</td>
-		   <td style="width:40%;" class='midnight-blue'>STATUS</td>
+           	<td style="width:35%;" class='midnight-blue'>ESTADO DEL PACIENTE</td>
+		  	<td style="width:30%;" class='midnight-blue'>SERVICIO A REALIZAR</td>
+		   	<!-- <td style="width:40%;" class='midnight-blue'>STATUS</td> -->
         </tr>
 		<tr>
-           <td style="width:35%;">
-			<?php 
-				
-				echo $descripcion;
-			   echo "<br>";
-			   
-			?>
-			   <span style="font-weight: bold;color: #12B024;font-style: oblique;"><?php echo $cargador_value;?></span>
-		   </td>
-		  <td style="width:25%;"><?php echo $servicio?></td>
-		   <td style="width:40%;" >
+           	<td style="width:35%;">
 				<?php 
-			 echo  $status;
+					echo $descripcion;
+					echo "<br>";
 				?>
-		   </td>
+		   	</td>
+		  	<td style="width:25%;"><?php echo $servicio?></td>
         </tr>
-		
-        
-   
     </table>
-  
-   <table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
+   	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-           <td style="width:20%;" class='midnight-blue'>COSTO POR REVISION: <?php echo $revision;?></td>
-		  <td style="width:25%;" class='midnight-blue'>PENDIENTE: <?php echo $pendiente;?></td>
-		   <td style="width:30%;" class='midnight-blue'>ADELANTO: <?php echo $adelanto;?></td>
+		  	<td style="width:25%;" class='midnight-blue'>PENDIENTE: <?php echo $pendiente;?></td>
+		   	<td style="width:30%;" class='midnight-blue'>ADELANTO: <?php echo $adelanto;?></td>
 			<td style="width:40%;" class='midnight-blue'>COSTO TOTAL DEL SERVICIO: <?php echo $total;?></td>
         </tr>
-	
     </table>
-
-       
-
-	
-	
-	
 	<br>
-	<div style="font-size:11pt;text-align:center;font-weight:bold;width: 90%;"><table border="1"  cellpadding="0" cellspacing="0" style="width: 40%;height: 10%;border-style: solid;margin-top: 2%;" align="center"><tr><td><table  align="center" border="0" cellpadding="0" cellspacing="0" style="border-style: solid; border-top-width: 1px;width: 90%;margin-top: 20%"><tr><td style="padding: 0px 10% 0px 10%;text-align: center">FIRMA DEL CLIENTE</td></tr></table></td></tr></table>
-	<table border="0" align="center"><tr><td>Transcurridos 30 días su equipo sera tomado como parte de pago del servicio</td></tr></table>
-	</div>
+	<!-- <div style="font-size:11pt;text-align:center;font-weight:bold;width: 90%;"><table border="1"  cellpadding="0" cellspacing="0" style="width: 40%;height: 10%;border-style: solid;margin-top: 2%;" align="center"><tr><td><table  align="center" border="0" cellpadding="0" cellspacing="0" style="border-style: solid; border-top-width: 1px;width: 90%;margin-top: 20%"><tr><td style="padding: 0px 10% 0px 10%;text-align: center">FIRMA DEL CLIENTE</td></tr></table></td></tr></table>
+	<table border="0" align="center"><tr><td>Transcurridos 30 días su equipo sera tomado como parte de pago del servicio</td></tr></table> -->
+	<!-- </div> -->
 	
 	
 	  
