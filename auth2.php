@@ -11,7 +11,7 @@ if(empty($errors)){
   $session->elegir_sucursal($sucursal);
    if(isset($_SESSION['id_sucursal'])){
    
-   $session->msg("s", "Bienvenido a sistema de inventario, Sucursal: ".$_SESSION['nombre_sucursal']);
+   $session->msg("s", "Bienvenido a sistema de guías, Sucursal: ".$_SESSION['nombre_sucursal']);
    redirect('admin.php',false);
  }
     } 
