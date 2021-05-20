@@ -198,6 +198,8 @@ label {
     padding: 2px;
     width: 30%;
     background-color: #48155B
+    
+    
 }
 
 .tabla-cuenta {
@@ -515,7 +517,7 @@ label {
     padding-right: 0px;
     width: 100%;
     height: 38px;
-    background-color: #070964;
+    background-color: #00aff0;
     border-radius: 51px 51px 51px 51px;
     -moz-border-radius: 51px 51px 51px 51px;
     -webkit-border-radius: 51px 51px 51px 51px;
@@ -528,7 +530,9 @@ label {
     min-height: 34px;
     width: 100%;
     height: 38px;
-    background-color: #218D97;
+    background-color: #00aff0;
+    border: 6px solid #00aff0;
+    border-radius: 31px 31px 31px 32px;
 }
 
 .menu-inicial .taco-mPrincipal4 .taco-contador1 {
@@ -552,7 +556,9 @@ label {
     padding-right: 8px;
     width: 100%;
     height: 14%;
-    background-color: #bf6b19;
+    background-color: #0c9c54;
+    border: 6px solid #0c9c54;
+border-radius: 31px 31px 31px 32px;
 }
 
 .menu-inicial .taco-mPrincipal1 .taco-contador3 {
@@ -602,7 +608,7 @@ label {
     min-height: 34px;
     width: 100%;
     height: 38px;
-    background-color: #c06803;
+    background-color: #0c9c54;
     border-radius: 51px 51px 51px 51px;
     -moz-border-radius: 51px 51px 51px 51px;
     -webkit-border-radius: 51px 51px 51px 51px;
@@ -723,11 +729,14 @@ label {
 }
 
 .menu-inicial .tacoA {
-    background-color: #96D067;
+    background-color: #75c89e;
 }
 
 .menu-inicial .taco-blue {
-    background-color: #4ED5DE;
+    background-color: #6ed2f6;
+    border: 6px solid #6FD1F8;
+    border-radius: 31px 31px 31px 32px;
+    
 }
 
 .menu-inicial .taco-green {
@@ -735,19 +744,27 @@ label {
 }
 
 .menu-inicial .taco-aqua {
-    background-color: #39B7B7;
+    background-color: #6fd1f8;
+    border: 6px solid #6FD1F8;
+    border-radius: 31px 31px 31px 32px;
+    
 }
 
 .menu-inicial .tacoB {
-    background-color: #ff942d;
+    background-color: #75c89e;
+    border: 6px solid #75c89e;
+border-radius: 31px 31px 31px 32px;
+    
 }
 
 .menu-inicial .tacoPlomo {
     background-color: #919495;
+    border: 6px solid #919495;
+border-radius: 31px 31px 31px 32px;
 }
 
 .menu-inicial .taco-principal {
-    background-color: #6FDFC9;
+    background-color: #6ed2f6;
 }
 
 .menu-inicial .taco-principal-B {
@@ -759,7 +776,7 @@ label {
 }
 
 .menu-inicial .taco-imagenB {
-    background-color: #e78b00;
+    background-color: #75c89e;
 }
 
 .menu-inicial .tacoAO {
@@ -775,7 +792,7 @@ label {
 }
 
 .menu-inicial .tacoC {
-    background-color: #0178bc;
+    background-color: #6ed2f6;
 }
 
 .login-page {
@@ -972,6 +989,9 @@ label {
         margin: 2px 2px 2px 2px;
         padding: 2px;
     }
+
+   
+    
     .menu-inicial .taco-mPrincipal5 {
         display: inline-block;
         vertical-align: top;
