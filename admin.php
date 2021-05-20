@@ -131,6 +131,7 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
         </div>
        
 		<!--<div class="pie-menu-inicial">
+       
     <div class="pie-logo-saint">
         <img src="./libs/images/mr robot logo1.png" alt="imglogon" width="484" height="65" style="width:130px">
         <span class="version-saint">Tecnek Web</span>
