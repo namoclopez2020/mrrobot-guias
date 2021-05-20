@@ -126,12 +126,14 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
                 </div>
                 <div class="taco-dato"><br>
 					
-                    <img alt="imglogon" class="imagen-taco" src="uploads/empresa/<?php echo $ruta_logo;?>">
+                    <img alt="imglogon" class="imagen-taco" src="uploads/empresa/lab.jpeg">
+                     <!--?php echo $ruta_logo;?>-->
                 </div>
             </a>
         </div>
        
 		<!--<div class="pie-menu-inicial">
+       
     <div class="pie-logo-saint">
         <img src="./libs/images/mr robot logo1.png" alt="imglogon" width="484" height="65" style="width:130px">
         <span class="version-saint">Tecnek Web</span>
