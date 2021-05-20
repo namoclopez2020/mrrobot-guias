@@ -125,9 +125,7 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
                 </span>      
                 </div>
                 <div class="taco-dato"><br>
-					
-                    <img alt="imglogon" class="imagen-taco" src="uploads/empresa/lab.jpeg">
-                     <!--?php echo $ruta_logo;?>-->
+                    <img alt="imglogon" class="imagen-taco" src="uploads/empresa/<?php echo $ruta_logo;?>"> 
                 </div>
             </a>
         </div>
