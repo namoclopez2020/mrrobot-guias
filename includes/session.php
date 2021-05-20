@@ -29,8 +29,8 @@ class Session {
       $_SESSION['ruc_sucursal']=$data['RUC_SUCURSAL'];
       $_SESSION['ruta_imagen']=$data['image_path'];
       $_SESSION['direccion_sucursal']=$data['direccion_sucursal'];
-      $_SESSION['wsp_sucursal']=$data['wsp_sucursal'];
-      $_SESSION['email_sucursal']=$data['email_sucursal'];
+      $_SESSION['wsp_sucursal']="";
+      $_SESSION['email_sucursal']=$data['email'];
     }
 
   }

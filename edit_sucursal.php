@@ -14,50 +14,50 @@
 			$direccion_sucursal=$suc['direccion_sucursal'];
 			$telefono_sucursal=$suc['telefono_sucursal'];
 			$ruc_sucursal=$suc['RUC_SUCURSAL'];
-			// $email_sucursal=$suc['email_sucursal'];
+			$email_sucursal=$suc['email'];
 			// $wsp_sucursal=$suc['wsp_sucursal'];
 		}
   	}
 	//update user image
 	if(isset($_POST['submit'])) {
-	$photo = new Media();
-	$sucursal_id = (int)$_POST['sucursal_id'];
-	$photo->upload($_FILES['file_upload']);
-	if($photo->process_empresa($sucursal_id)){
-		$session->msg('s','La foto fue subida al servidor.');
-		redirect('edit_sucursal.php?id='.$sucursal_id);
+		$photo = new Media();
+		$sucursal_id = (int)$_POST['sucursal_id'];
+		$photo->upload($_FILES['file_upload']);
+		if($photo->process_empresa($sucursal_id)){
+			$session->msg('s','La foto fue subida al servidor.');
+			redirect('edit_sucursal.php?id='.$sucursal_id);
 		} else{
-		$session->msg('d',join($photo->errors));
-		redirect('edit_sucursal.php?id='.$sucursal_id);
+			$session->msg('d',join($photo->errors));
+			redirect('edit_sucursal.php?id='.$sucursal_id);
 		}
 	}
 	
  	//update empresa other info
-  if(isset($_POST['update'])){
-    $req_fields = array('name','direccion','telefono','ruc');
-    validate_fields($req_fields);
-    if(empty($errors)){
-             $id = remove_junk($db->escape($_POST['id_sucursal']));
-           $name = remove_junk($db->escape($_POST['name']));
-       $direccion = remove_junk($db->escape($_POST['direccion']));
-       $telefono = remove_junk($db->escape($_POST['telefono']));
-       $ruc = remove_junk($db->escape($_POST['ruc']));
-      //  $email = remove_junk($db->escape($_POST['email']));
-      //  $wsp = remove_junk($db->escape($_POST['wsp']));
-            $sql = "UPDATE sucursales SET nombre_sucursal ='{$name}', direccion_sucursal ='{$direccion}' , telefono_sucursal='{$telefono}',RUC_SUCURSAL='{$ruc}' WHERE id='{$id}'";
-    $result = $db->query($sql);
-          if($result && $db->affected_rows() === 1){
-            $session->msg('s',"Datos actualizados. ");
-            redirect('edit_sucursal.php?id='.$id, false);
-          } else {
-            $session->msg('d',' Lo siento, actualización falló.');
-            redirect('edit_sucursal.php?id='.$id, false);
-          }
-    } else {
-      $session->msg("d", $errors);
-      redirect('edit_account.php',false);
-    }
-  }
+  	if(isset($_POST['update'])){
+		$req_fields = array('name','direccion','telefono','ruc');
+		validate_fields($req_fields);
+    	if(empty($errors)){
+			$id = remove_junk($db->escape($_POST['id_sucursal']));
+           	$name = remove_junk($db->escape($_POST['name']));
+			$direccion = remove_junk($db->escape($_POST['direccion']));
+			$telefono = remove_junk($db->escape($_POST['telefono']));
+			$ruc = remove_junk($db->escape($_POST['ruc']));
+      		$email = remove_junk($db->escape($_POST['email']));
+      		//  $wsp = remove_junk($db->escape($_POST['wsp']));
+            $sql = "UPDATE sucursales SET nombre_sucursal ='{$name}', direccion_sucursal ='{$direccion}' , telefono_sucursal='{$telefono}',RUC_SUCURSAL='{$ruc}',email='{$email}' WHERE id='{$id}'";
+    		$result = $db->query($sql);
+			if($result && $db->affected_rows() === 1){
+				$session->msg('s',"Datos actualizados. ");
+				redirect('edit_sucursal.php?id='.$id, false);
+			} else {
+				$session->msg('d',' Lo siento, actualización falló.');
+				redirect('edit_sucursal.php?id='.$id, false);
+			}
+		} else {
+		$session->msg("d", $errors);
+		redirect('edit_account.php',false);
+		}
+  	}
 ?>
  <head>
   <?php include ("./layouts/header.php");?>
