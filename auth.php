@@ -17,7 +17,7 @@ if(empty($errors)){
       $session->login($user_id);
     //actualiza ultimo login
      updateLastLogIn($user_id);
-     $session->msg("s", "Bienvenido a sistema de inventario  ");
+     $session->msg("s", "Bienvenido a sistema de guías  ");
      redirect('seleccionar_sucursal.php',false);
     }else{
        $session->msg("d", "El usuario esta inactivo, contacte con el administrador");
