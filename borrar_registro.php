@@ -9,8 +9,7 @@
     $session->msg("d","correlativo no valido");
     redirect('mPrincipal.php');
   }
-?>
-<?php
+
   $delete_id = vigencia_registro('registro',(int)$product['correlativo']);
   $borrar_pagos = borrar_pagos((int)$product['correlativo']);
   if($delete_id && $borrar_pagos){
