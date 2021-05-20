@@ -621,7 +621,7 @@ label {
 .menu-inicial .taco-mPrincipal .taco-titulo1 {
     padding: 0 0px 0;
     height: 10%;
-    width: 60%;
+    /* width: 60%; */
     font-size: 150%;
     display: block;
     text-align: left;
@@ -824,6 +824,10 @@ label {
 }
 
 @media (max-width: 480px) {
+    .fade.in{
+        width: 90%;
+        height:90%;
+    }
     .menu-inicial {
         margin-right: 10%;
         margin-bottom: 0px;
@@ -991,6 +995,7 @@ label {
         margin-left: auto;
         margin-right: auto;
         width: 50px;
+        height:50%;
     }
     .imagen-taco10 {
         height: 30%;

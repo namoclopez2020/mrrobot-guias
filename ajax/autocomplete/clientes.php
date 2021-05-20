@@ -22,6 +22,7 @@ if ($db->con())
 		$row_array['dni_cliente']=$row['dni_cliente'];
 		$row_array['direccion_cliente']=$row['direccion_cliente'];
 		$row_array['email_cliente']=$row['email_cliente'];
+		$row_array['edad_cliente']=$row['edad'];
 		array_push($return_arr,$row_array);
     }
 	

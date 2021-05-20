@@ -32,15 +32,19 @@
 	
 function calcular() { 
 
-var revision = parseFloat(document.datos.revision.value); 
-var costo =parseFloat(document.datos.costo.value); 
-var repuesto=parseFloat(document.datos.repuesto.value);
-var adelanto=parseFloat(document.datos.adelanto.value);
-	var subtotal= revision+costo+repuesto;
-var saldo= subtotal-adelanto;
-document.datos.total.value=(subtotal).toFixed(0); 
-document.datos.saldo.value=(saldo).toFixed(0);
-
+  var revision = parseFloat(document.datos.revision.value); 
+  var costo =parseFloat(document.datos.costo.value); 
+  var repuesto=parseFloat(document.datos.repuesto.value);
+  var adelanto=parseFloat(document.datos.adelanto.value);
+  var subtotal= revision+costo+repuesto;
+  var saldo= subtotal-adelanto;
+    if(!isNaN(subtotal)){
+      document.datos.total.value=(subtotal).toFixed(0); 
+    }
+    if(!isNaN(saldo)){
+      document.datos.saldo.value=(saldo).toFixed(0);
+    }
+  
 }
 	
 

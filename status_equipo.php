@@ -30,20 +30,22 @@
 									<div class="form-group">
 										<div class="container-fluid">
 											<div class="table-responsive" >
-												<table class="table"  id="table" border="0" style="">
+												<table class="table"  id="example" border="0" style="">
 													<thead class="warning">
 														<th> Correlativo</th>
 														<th> DNI</th>
 														<th class="text-center" style="width: 10%;">Nombre </th>
 														<th class="text-center" style="width: 5%;"> Telefono </th>
 														<th class="text-center" style="width: 5%;"> Direccion </th>
-														<th class="text-center" style="width: 50%;"> Equipo </th>
-														<th class="text-center" style="width: 5%;"> Falla </th>
-														<th class="text-center" style="width: 5%;"> Status </th>
+														<th class="text-center" style="width: 40%;">Presunción diagnostico / Diagnostico (CIE: 10)</th>
+														<th class="text-center" style="width: 5%;"> Servicio </th>
+														<!-- <th class="text-center" style="width: 5%;"> Status </th> -->
 														<th class="text-center" style="width: 5%;"> Fecha </th>
-														<th class="text-center" style="width: 10%;"> Costo por revision</th>
+														<th class="text-center" style="width: 10%;"> Consulta Médica</th>
+														<th class="text-center" style="width: 10%;"> Otros Servicios</th>
 														<th class="text-center" style="width: 10%;"> Total</th>
-														<th class="text-center" style="width: 10%;">Acciones </th>
+														<th class="text-center" style="width: 10%;"> Cantidad pagada</th>
+														<!-- <th class="text-center" style="width: 10%;">Acciones </th> -->
 													</thead>
 													</tbody>
 														<?php
@@ -58,6 +60,9 @@
 																$telefono=$row['telefono_cliente'];
 																$descripcion=$row['descrip'];
 																$revision=$row['costo_por_revision'];
+																$costo = $row['costo_total'];
+																$repuesto = $row['costo_del_repuesto'];
+																$adelanto=$row['abono_por_servicio'];
 																
 																$falla=$row['falla'];
 																$status=$row['status'];
@@ -104,11 +109,13 @@
 																echo "<td class=\"text-center\">".remove_junk($direccion)."</td>";
 																echo "<td class=\"text-center\" style=\"width: 50%;\">".remove_junk($descripcion)."</td>";
 																echo "<td class=\"text-center\">".remove_junk($falla)."</td>";
-																echo "<td class=\"text-center\" bgcolor=\"".$color."\">".remove_junk($status_value)."</td>";
+																// echo "<td class=\"text-center\" bgcolor=\"".$color."\">".remove_junk($status_value)."</td>";
 																echo "<td class=\"text-center\">".read_date($fecha)."</td>";  
-																echo "<td class=\"text-center\">".$revision."</td>";
+																echo "<td class=\"text-center\">".$costo."</td>";
+																echo "<td class=\"text-center\">".$repuesto."</td>";
 																echo "<td class=\"text-center\">".$total."</td>";
-																echo "<td class=\"text-center\">".$content."</td>";
+																echo "<td class=\"text-center\">".$adelanto."</td>";
+																// echo "<td class=\"text-center\">".$content."</td>";
 																echo "</tr>";
 																
 															}
