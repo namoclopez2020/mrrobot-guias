@@ -48,7 +48,7 @@
 		$rw=$db->fetch_array($sql);
 		//capturar datos 
 		$id_vendedor=$rw['tecnico_asignado'];
-		$descripcion=str_replace("<br/>","\n",$rw['descrip']);
+		$descripcion=$rw['descrip'];
 		$nombre_cliente=$rw['nombre_cliente'];
 		$dni_cliente=$rw['dni_cliente'];
 		$telefono_cliente=$rw['telefono_cliente'];
@@ -193,7 +193,7 @@
 		<tr>
            	<td style="width:40%;">
 				<?php 
-					echo $descripcion;
+					print_r($descripcion);
 					echo "<br>";
 				?>
 		   	</td>
