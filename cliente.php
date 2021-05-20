@@ -33,13 +33,12 @@
             <thead>
               <tr>
                 <th class="text-center" style="width: 50px;">#</th>
-                <th class="text-center" style="width: 10%;">Nombre</th>
-                <th class="text-center" style="width: 10%;"> Teléfono </th>
-                <th class="text-center" style="width: 10%;"> Email </th>
+                <th class="text-center" style="width: 10%;">Nombre y Apellidos</th>
+				<th class="text-center" style="width: 10%;"> Teléfono </th>
+				<th class="text-center" style="width: 10%;"> Edad </th>
+                <th class="text-center" style="width: 10%;"> E-mail </th>
                 <th class="text-center" style="width: 25%;"> Dirección </th>
                 <th class="text-center" style="width: 10%;"> Agregado </th>
-                <th class="text-center" style="width: 10%;"> Grupo </th>
-                <th class="text-center" style="width: 10%;"> Pedidos </th>
                 <th class="text-center" style="width: 50px;"> Acciones </th>
               </tr>
             </thead>
@@ -49,20 +48,19 @@
                 <td class="text-center"><?php echo count_id();?></td>
                 
                 <td> <?php echo remove_junk($cliente['nombre_cliente']); ?></td>
-                <td class="text-center"> <?php echo remove_junk($cliente['telefono_cliente']); ?></td>
+				<td class="text-center"> <?php echo remove_junk($cliente['telefono_cliente']); ?></td>
+				<td class="text-center"> <?php echo remove_junk($cliente['edad']); ?></td>
                 <td class="text-center"> <?php echo remove_junk($cliente['email_cliente']); ?></td>
                 <td class="text-center"> <?php echo remove_junk($cliente['direccion_cliente']); ?></td>
                 <td class="text-center"> <?php echo read_date($cliente['date_added']); ?></td>
-                <td class="text-center"> <?php echo remove_junk($cliente['grupo_cliente']); ?></td>
-                <td class="text-center"> <?php echo remove_junk($cliente['pedidos_cliente']); ?></td>
                 <td class="text-center">
                   <div class="btn-group">
                     <a href="edit_client.php?id=<?php echo (int)$cliente['id_cliente'];?>" class="btn btn-info btn-xs"  title="Editar" data-toggle="tooltip">
                       <span class="glyphicon glyphicon-edit"></span>
                     </a>
-                     <a href="delete_client.php?id=<?php echo (int)$cliente['id_cliente'];?>" class="btn btn-danger btn-xs"  title="Eliminar" data-toggle="tooltip">
+                     <!-- <a href="delete_client.php?id=<?php //echo (int)$cliente['id_cliente'];?>" class="btn btn-danger btn-xs"  title="Eliminar" data-toggle="tooltip">
                       <span class="glyphicon glyphicon-trash"></span>
-                    </a>
+                    </a> -->
                   </div>
                 </td>
               </tr>

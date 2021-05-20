@@ -21,14 +21,16 @@
 			$p_email   = remove_junk($db->escape($_POST['email_title']));
 			$p_cliente  = remove_junk($db->escape($_POST['dir_cliente']));
 			$grupo_cliente  = remove_junk($db->escape($_POST['grupo-cliente']));
-			$pedidos_cliente = ($_POST['pedidos_cliente']!=="") ?  remove_junk($db->escape($_POST['pedidos_cliente'])) : "sin pedidos";
 			$dni_cliente = (isset($_POST['dni_cliente'])) ? remove_junk($db->escape($_POST['dni_cliente'])) : "";
+			$edad = remove_junk($db->escape($_POST['edad_cliente']));
+			$pedidos="Sin pedidos";
+			$grupo="Ordinario";
 
 			$date    = make_date();
 			$query  = "INSERT INTO cliente (";
-			$query .=" nombre_cliente,telefono_cliente,dni_cliente,email_cliente,direccion_cliente,date_added,grupo_cliente,pedidos_cliente,sucursal_id";
+			$query .=" nombre_cliente,telefono_cliente,dni_cliente,email_cliente,direccion_cliente,date_added,sucursal_id,edad,grupo_cliente,pedidos_cliente";
 			$query .=") VALUES (";
-			$query .=" '{$p_name}', '{$p_telef}','{$dni_cliente}', '{$p_email}', '{$p_cliente}',  '{$date}','{$grupo_cliente}','{$pedidos_cliente}','{$id_sucursal}'";
+			$query .=" '{$p_name}', '{$p_telef}','{$dni_cliente}', '{$p_email}', '{$p_cliente}',  '{$date}','{$id_sucursal}' , {$edad}, '{$grupo}', '{$pedidos}'";
 			$query .=")";
 			
 			if($db->query($query)){
@@ -70,6 +72,7 @@
          				<div class="col-md-12">
           					<form method="post" action="add_client.php" class="clearfix">
               					<div class="form-group">
+								  	<label for="" class="control-label">Nombres y Apellidos:</label>
                 					<div class="input-group">
                   						<span class="input-group-addon">
                    							<i class="glyphicon glyphicon-th-large"></i>
@@ -78,6 +81,7 @@
                						</div>
               					</div>
 			  					<div class="form-group">
+								  	<label for="" class="control-label">Celular:</label>
                 					<div class="input-group">
                   						<span class="input-group-addon">
                    							<i class="glyphicon glyphicon-th-large"></i>
@@ -86,6 +90,7 @@
                						</div>
               					</div>
 			  					<div class="form-group">
+								  	<label for="" class="control-label">E-MAIL:</label>
                 					<div class="input-group">
                   						<span class="input-group-addon">
                    							<i class="glyphicon glyphicon-th-large"></i>
@@ -94,6 +99,7 @@
                						</div>
               					</div>
 			  					<div class="form-group">
+								  	<label for="" class="control-label">Dirección:</label>
 									<div class="input-group">
 										<span class="input-group-addon">
 											<i class="glyphicon glyphicon-th-large"></i>
@@ -102,6 +108,7 @@
 									</div>
 								</div>
           						<div class="form-group">
+								  	<label for="" class="control-label">DNI:</label>
                 					<div class="input-group">
                   						<span class="input-group-addon">
 											<i class="glyphicon glyphicon-th-large"></i>
@@ -110,20 +117,15 @@
 									</div>
 								</div>
                					<div class="form-group">
+								   	<label for="" class="control-label">Edad:</label>
                 					<div class="input-group">
                   						<span class="input-group-addon">
                    							<i class="glyphicon glyphicon-th-large"></i>
                   						</span>
-                  						<input type="text" class="form-control" name="pedidos_cliente" placeholder="Pedidos del cliente" >
+                  						<input type="text" class="form-control" name="edad_cliente" placeholder="Edad del cliente" >
                						</div>
               					</div>
-								<div class="form-group">
-									<select class="form-control" name="grupo-cliente" >
-									<option value="Ordinario">Ordinario</option>
-									<option value="Potencial">Potencial</option>
-									</select>
-								</div>
-              					<button type="submit" name="add_client" class="btn btn-danger">Agregar Cliente</button>
+              					<button type="submit" name="add_client" class="btn btn-info">Agregar Cliente</button>
           					</form>
          				</div>
         			</div>
