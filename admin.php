@@ -116,11 +116,11 @@ $wsp_sucursal=$_SESSION['wsp_sucursal'];
                 </div>
             </a>
 			-->
-            <a href="panel.php" class="taco taco-imagenB">
+            <a href="#" class="taco taco-imagenB">
                
                 <div class="taco-contador-orange">
                   <span class="taco-titulo">
-                    Vista General.
+                    Logo Actual
 					
                 </span>      
                 </div>

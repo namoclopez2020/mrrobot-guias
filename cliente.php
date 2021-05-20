@@ -58,9 +58,9 @@
                     <a href="edit_client.php?id=<?php echo (int)$cliente['id_cliente'];?>" class="btn btn-info btn-xs"  title="Editar" data-toggle="tooltip">
                       <span class="glyphicon glyphicon-edit"></span>
                     </a>
-                     <a href="delete_client.php?id=<?php echo (int)$cliente['id_cliente'];?>" class="btn btn-danger btn-xs"  title="Eliminar" data-toggle="tooltip">
+                     <!-- <a href="delete_client.php?id=<?php //echo (int)$cliente['id_cliente'];?>" class="btn btn-danger btn-xs"  title="Eliminar" data-toggle="tooltip">
                       <span class="glyphicon glyphicon-trash"></span>
-                    </a>
+                    </a> -->
                   </div>
                 </td>
               </tr>
