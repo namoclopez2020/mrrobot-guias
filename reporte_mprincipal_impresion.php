@@ -64,8 +64,7 @@
 		$telefono_sucursal=$rw['telefono_sucursal'];
 		$ruc_sucursal=$rw['RUC_SUCURSAL'];
 		$ruta_logo=$rw['image_path'];
-		$wsp_sucursal = $rw['wsp_sucursal'];
-		$email_sucursal = $rw['email_sucursal'];
+		$email_sucursal = "";
 		if($status_num==0){
 			$status="ANULADO";
 		}
