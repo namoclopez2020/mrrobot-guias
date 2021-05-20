@@ -16,6 +16,7 @@
 			$dni=$data['dni_cliente'];
 			$direccion=$data['direccion_cliente'];
 			$email=$data['email_cliente'];
+			$edad=$data['edad'];
 			$descripcion=$data['descrip'];
 			$descripcion=str_replace("<br/>","\n",$descripcion);
 			$descripcion=str_replace("<br>","\n",$descripcion);
@@ -54,6 +55,7 @@
 		$sql=$db->query("select LAST_INSERT_ID(correlativo) as last from registro order by correlativo desc limit 0,1 ");
 		$rw=$db->fetch_array($sql);
 		$id=$rw['last']+1;
+		$edad = "";
 	}
 ?>
 <html>
@@ -244,7 +246,8 @@
 							</table>
 						</div>
 					</div>
-					<div class="taco-mPrincipal5" style="background-color: #4F4F4F;color:white">
+					<div class="taco-mPrincipal5" style="background-color: #4F4F4F;color:white border: 6px solid #6FD1F8;
+border-radius: 31px 31px 31px 32px;">
 						<div class="taco-dato10">
 							<table class="tabla-cuenta" >
 								<tr>
@@ -264,9 +267,11 @@
 					</div>
 				</form>
 				<!--fin del formulario-->
-				<div class="taco-mPrincipal4 taco-green" >
+				<div class="taco-mPrincipal4 taco-green" style="height: 100%;border: 0px border: 6px solid #6FD1F8;
+border-radius: 31px 31px 31px 32px;" >
 					<div class="container-fluid "> 
-						<div class="table-responsive"   style="height: 100%;border: 0px">
+						<div class="table-responsive"   style="height: 100%;border: 0px border: 6px solid #6FD1F8;
+border-radius: 31px 31px 31px 32px;" >
 							<table class="table"  id="example" border="0" style="font-size: 12px;background-color:white;font-weight: bold">
 								<thead style="background-color: #4F4F4F;color:white">
 										<th class="text-center" style="width: 5%;"> Correlativo</th>
