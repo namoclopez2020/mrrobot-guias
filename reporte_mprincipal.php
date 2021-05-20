@@ -4,7 +4,7 @@
 	tr    { vertical-align: top; }
 	td    { vertical-align: top; }
 	.midnight-blue{
-		background:#2c3e50;
+		background : #2fcdfd;
 		padding: 4px 4px 4px;
 		color:white;
 		font-weight:bold;
@@ -128,7 +128,7 @@
 				<br><?php echo $direccion_sucursal;?><br> 
 				RUC: <?php echo $ruc_sucursal;?><br>
 				CEL: <?php echo $telefono_sucursal;?><br>
-				EMAIL: <?php echo $email_sucursal;?>
+				E-MAIL: <?php echo $email_sucursal;?>
             </td>
 			<td style="width: 35%;text-align:right; 	">
 			COMPROBANTE Nº <?php echo $numero_factura;?>
@@ -142,20 +142,18 @@
 	
     <table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-           <td  style="width:50%;" class='midnight-blue'>Datos del cliente</td>
+           <td  style="width:50%;" class='midnight-blue'>Datos del paciente</td>
         </tr>
 		<tr>
-           <td style="width:100%; height: 50%;line-height : 20px;" >
-			<span style="font-size: 15px;font-weight: bold">Nombre:</span> <?php echo $nombre_cliente;?> <br>
-			<span style="font-size: 15px;font-weight: bold">DNI:</span> <?php echo $dni_cliente;?> <br>
-			<span style="font-size: 15px;font-weight: bold">TLF:</span> <?php echo $telefono_cliente;?> <br>
-			<span style="font-size: 15px;font-weight: bold">Email:</span> <?php echo $email_cliente;?> <br>
-			<span style="font-size: 15px;font-weight: bold">Edad:</span> <?php echo $edad_cliente;?> <br>
-		   </td>
-			
+			<td style="width:100%; height: 50%;line-height : 20px;" >
+				<span style="font-size: 15px;font-weight: bold">Nombres y Apellidos:</span> <?php echo $nombre_cliente;?> <br>
+				<span style="font-size: 15px;font-weight: bold">Direccion:</span> <?php echo $direccion_cliente;?> <br>
+				<span style="font-size: 15px;font-weight: bold">Email:</span> <?php echo $email_cliente;?> <br>
+				<span style="font-size: 15px;font-weight: bold">Edad:</span> <?php echo $edad_cliente;?> <br>
+				<span style="font-size: 15px;font-weight: bold">DNI:</span> <?php echo $dni_cliente;?> <br>
+				<span style="font-size: 15px;font-weight: bold">TLF:</span> <?php echo $telefono_cliente;?> <br>
+			</td>
         </tr>
-		
-   
     </table>
 	<br>
 	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
@@ -185,28 +183,38 @@
 	<br>
 	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-           	<td style="width:35%;" class='midnight-blue'>ESTADO DEL PACIENTE</td>
-		  	<td style="width:30%;" class='midnight-blue'>SERVICIO A REALIZAR</td>
+           	<td style="width:40%;" class='midnight-blue'>Presunción diagnostico / Diagnostico (CIE: 10)</td>
+			<td style="width:30%;" class='midnight-blue'>SERVICIO A REALIZAR</td>
+			<td style="width:30%;" class='midnight-blue'>OTROS SERVICIOS</td>
 		   	<!-- <td style="width:40%;" class='midnight-blue'>STATUS</td> -->
         </tr>
 		<tr>
-           	<td style="width:35%;">
+           	<td style="width:40%;">
 				<?php 
 					echo $descripcion;
 					echo "<br>";
 				?>
 		   	</td>
-		  	<td style="width:25%;"><?php echo $servicio?></td>
+			<td style="width:30%;"><?php echo $servicio?></td>
+			<td style="width:30%;"><?php echo $informe?></td>
         </tr>
     </table>
    	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-		  	<td style="width:25%;" class='midnight-blue'>PENDIENTE: <?php echo $pendiente;?></td>
-		   	<td style="width:30%;" class='midnight-blue'>ADELANTO: <?php echo $adelanto;?></td>
-			<td style="width:40%;" class='midnight-blue'>COSTO TOTAL DEL SERVICIO: <?php echo $total;?></td>
-        </tr>
+			<td style="width:40%;" class='midnight-blue'>CONSULTA MÉDICA: <?php echo $costo;?></td>
+			<td style="width:30%;" class='midnight-blue'>COSTO OTROS SERVICIOS: <?php echo $repuesto;?></td>
+			<td style="width:30%;" class='midnight-blue'></td>
+		</tr>
     </table>
 	<br>
+
+	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
+        <tr>
+			<td style="width:40%;" class='midnight-blue'>PENDIENTE: <?php echo $pendiente;?></td>
+		   	<td style="width:30%;" class='midnight-blue'>ADELANTO: <?php echo $adelanto;?></td>
+			<td style="width:30%;" class='midnight-blue'>COSTO TOTAL DEL SERVICIO: <?php echo $total;?></td>
+		</tr>
+    </table>
 	<!-- <div style="font-size:11pt;text-align:center;font-weight:bold;width: 90%;"><table border="1"  cellpadding="0" cellspacing="0" style="width: 40%;height: 10%;border-style: solid;margin-top: 2%;" align="center"><tr><td><table  align="center" border="0" cellpadding="0" cellspacing="0" style="border-style: solid; border-top-width: 1px;width: 90%;margin-top: 20%"><tr><td style="padding: 0px 10% 0px 10%;text-align: center">FIRMA DEL CLIENTE</td></tr></table></td></tr></table>
 	<table border="0" align="center"><tr><td>Transcurridos 30 días su equipo sera tomado como parte de pago del servicio</td></tr></table> -->
 	<!-- </div> -->

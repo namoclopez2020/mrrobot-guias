@@ -79,7 +79,7 @@
 					<div class="taco-mPrincipal taco-blue" >
 						<div class="taco-contador1" >
 							<span class="taco-titulo1">
-								Datos del cliente
+								Datos del paciente
 							</span>      
 						</div>
 						<div class="taco-dato1" >
@@ -119,13 +119,13 @@
 					<div class="taco-mPrincipal tacoB" >
 						<div class="taco-contador2" >
 							<span class="taco-titulo1">
-								Status del paciente
+								Presunción diagnostico
 							</span>      
 						</div>
 						<div class="taco-dato1">
 							<table class="form-equipo" border="0" style="color:black">
 								<tr>
-									<td class="celda1" style="margin-bottom:10px">Status del paciente</td>
+									<td class="celda1" style="margin-bottom:10px">Diagnostico (CIE: 10)</td>
 									<td colspan="2">
 										<textarea name="info" id="info" class="textarea1"  style="margin-bottom:20px"><?php echo $descripcion?></textarea>
 									</td>
@@ -167,7 +167,7 @@
 						<div class="taco-dato2">
 							<table class="informe" >
 								<tr>
-									<td style="color:aqua">Informe Final</td>
+									<td style="color:aqua">Otros Servicios</td>
 								</tr>
 								<tr>
 									<td>
@@ -218,21 +218,21 @@
 						<div class="taco-dato5" >
 							<table class="tabla5" >
 								<tr  style="display:none">
-									<td class="celda">COSTO DE REVISIÓN</td>
+									<td class="celda">COSTO DE CONSULTA</td>
 									<td class="celda">
 										<input type="text" name="revision" id="revision" class ="textbox1" value="0" onChange="calcular()" required>
 									</td>
 								</tr>
 								<tr>
-									<td class="celda">COSTO DEL SERVICIO </td>
+									<td class="celda">COSTO DEL SERVICIO</td>
 									<td class="Celda">
-										<input type="text" name="costo" id="costo" class ="textbox1" style="margin-bottom:20px" value="<?php echo $costo_servicio?>" onchange="calcular()" required>
+										<input type="text" name="costo" id="costo" class ="textbox1"  value="<?php echo $costo_servicio?>" onchange="calcular()" required>
 									</td>
 								</tr>
-								<tr style="display:none">
-									<td class="celda">COSTO DEL REPUESTO</td>
+								<tr>
+									<td class="celda">COSTO DE OTROS SERVICIOS</td>
 									<td class="celda">
-										<input type="text" name="repuesto" id="repuesto" class ="textbox1" value="0" onChange="calcular()" required>
+										<input type="text" name="repuesto" id="repuesto" class ="textbox1" value="<?php echo $repuesto?>" onChange="calcular()" required>
 									</td>
 								</tr>
 								<tr>
@@ -271,14 +271,17 @@
 								<thead style="background-color: #4F4F4F;color:white">
 										<th class="text-center" style="width: 5%;"> Correlativo</th>
 										<th class="text-center" style="width: 5%; "> DNI</th>
-										<th class="text-center" style="width: 5%;">Nombre </th>
+										<th class="text-center" style="width: 10%;">Nombre </th>
 										<th class="text-center" style="width: 5%;"> Telefono </th>
 										<th class="text-center" style="width: 5%;"> Direccion </th>
-										<th class="text-center" style="width: 20%;"> Estado Paciente </th>
-										<th class="text-center" style="width: 35%;"> Servicio a realizar</th>
-										<!-- <th class="text-center" style="width: 5%;"> Status Servicio </th> -->
+										<th class="text-center" style="width: 40%;">Presunción diagnostico / Diagnostico (CIE: 10)</th>
+										<th class="text-center" style="width: 5%;"> Servicio </th>
+										<!-- <th class="text-center" style="width: 5%;"> Status </th> -->
 										<th class="text-center" style="width: 5%;"> Fecha </th>
+										<th class="text-center" style="width: 10%;"> Consulta Médica</th>
+										<th class="text-center" style="width: 10%;"> Otros Servicios</th>
 										<th class="text-center" style="width: 10%;"> Total</th>
+										<th class="text-center" style="width: 10%;"> Cantidad pagada</th>
 								</thead>
 								</tbody>
 									<?php
@@ -292,9 +295,9 @@
 											$telefono=$row['telefono_cliente'];
 											$descripcion=$row['descrip'];
 											$revision=$row['costo_por_revision'];
-											
-											$falla=$row['falla'];
-											$status=$row['status'];
+											$costo = $row['costo_total'];
+											$repuesto = $row['costo_del_repuesto'];
+											$adelanto=$row['abono_por_servicio'];
 											// if($status==0){
 											// 	$status_value="Anulado";
 											// }
@@ -315,14 +318,17 @@
 											echo "<tr>";
 											echo "<td class=\"text-center\"><a href='mPrincipal.php?id=".(int)$correlativo."'>".$correlativo."</a></td>";
 											echo "<td>".remove_junk($dni)."</td>";
-											echo "<td class=\"text-center\">".remove_junk($nombre)."</td>";	
-											echo "<td class=\"text-center\">".remove_junk($telefono)."</td>";	
+											echo "<td class=\"text-center\">".remove_junk($nombre)."</td>";
+											echo "<td class=\"text-center\">".remove_junk($telefono)."</td>";
 											echo "<td class=\"text-center\">".remove_junk($direccion)."</td>";
 											echo "<td class=\"text-center\" style=\"width: 50%;\">".remove_junk($descripcion)."</td>";
-											echo "<td class=\"text-center\">".remove_junk($falla)."</td>";	
-											// echo "<td class=\"text-center\">".remove_junk($status_value)."</td>";
-											echo "<td class=\"text-center\">".read_date($fecha)."</td>";
+											echo "<td class=\"text-center\">".remove_junk($falla)."</td>";
+											// echo "<td class=\"text-center\" bgcolor=\"".$color."\">".remove_junk($status_value)."</td>";
+											echo "<td class=\"text-center\">".read_date($fecha)."</td>";  
+											echo "<td class=\"text-center\">".$costo."</td>";
+											echo "<td class=\"text-center\">".$repuesto."</td>";
 											echo "<td class=\"text-center\">".$total."</td>";
+											echo "<td class=\"text-center\">".$adelanto."</td>";
 											echo "</tr>";
 										
 										}

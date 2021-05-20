@@ -72,7 +72,7 @@
         <div class="panel-heading">
           <strong>
             <span class="glyphicon glyphicon-th"></span>
-            <span>Actualizar datos del cliente</span>
+            <span>Actualizar datos del paciente</span>
          </strong>
         </div>
         <div class="panel-body">
@@ -111,6 +111,7 @@
                </div>
               </div>
               <div class="form-group">
+                <label for="">Hola</label>
                 <div class="input-group">
                   <span class="input-group-addon">
                    <i class="glyphicon glyphicon-th-large"></i>
@@ -118,24 +119,7 @@
                   <input type="text" class="form-control" name="dni_cliente" placeholder="Dni" value="<?php echo remove_junk($client['dni_cliente']);?>" required>
                </div>
               </div>
-
-
-               <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                   <i class="glyphicon glyphicon-th-large"></i>
-                  </span>
-                  <input type="text" class="form-control" name="pedidos_cliente" placeholder="Pedidos del cliente" value="<?php echo remove_junk($client['pedidos_cliente']);?>">
-               </div>
-              </div>
-
-               <div class="form-group">
-                    <select class="form-control" name="grupo_cliente" >
-                      <option value="Ordinario" <?php if($client['grupo_cliente']=='Ordinario'){echo "selected";}?>>Ordinario</option>
-                      <option value="Potencial" <?php if($client['grupo_cliente']=='Potencial'){echo "selected";}?>>Potencial</option>
-                    </select>
-                  </div>
-
+              
               <input type="hidden" class="form-control" name="id_cliente" placeholder="id del cliente" value="<?php echo remove_junk($client['id_cliente']);?>" required>
 
 
