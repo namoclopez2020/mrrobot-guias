@@ -794,7 +794,7 @@ function find_all_sucursales_by_user(){
   function registrosBySucursal(){
     global $db;
     $id_sucursal=$_SESSION['id_sucursal'];
-    $sql="select * from registro as r inner join cliente as c on r.id_cliente_registro=c.id_cliente  WHERE id_sucursal_registro = {$id_sucursal} ORDER BY r.correlativo DESC ";
+    $sql="select * from registro as r inner join cliente as c on r.id_cliente_registro=c.id_cliente  WHERE id_sucursal_registro = {$id_sucursal} and status = 1 ORDER BY r.correlativo DESC ";
     $registros = find_by_sql($sql);
     return $registros;
 
