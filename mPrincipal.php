@@ -16,6 +16,7 @@
 			$dni=$data['dni_cliente'];
 			$direccion=$data['direccion_cliente'];
 			$email=$data['email_cliente'];
+			$edad=$data['edad'];
 			$descripcion=$data['descrip'];
 			$descripcion=str_replace("<br/>","\n",$descripcion);
 			$descripcion=str_replace("<br>","\n",$descripcion);
@@ -54,6 +55,7 @@
 		$sql=$db->query("select LAST_INSERT_ID(correlativo) as last from registro order by correlativo desc limit 0,1 ");
 		$rw=$db->fetch_array($sql);
 		$id=$rw['last']+1;
+		$edad = "";
 	}
 ?>
 <html>
