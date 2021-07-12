@@ -121,7 +121,7 @@
     <table cellspacing="0" style="width: 100%;">
         <tr>
             <td style="width: 23%;height:20%; color: #444444;">
-                <img style="width: 100%;height:20%" src="uploads/empresa/<?php echo $ruta_logo?>" alt="Logo"><br>
+                <img style="width: 100%" src="uploads/empresa/<?php echo $ruta_logo?>" alt="Logo"><br>
             </td>
 			<td style="width: 55%; color: #34495e;font-size:14px;text-align:center;padding:3% 10% 3% 4%">
                 <span style="color: #34495e;font-size:20px;font-weight:bold"> <?php echo $nombre_sucursal;?></span>
