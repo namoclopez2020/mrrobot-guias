@@ -1,4 +1,4 @@
-﻿<style type="text/css">
+﻿﻿<style type="text/css">
 
 	table { vertical-align: top; }
 	tr    { vertical-align: top; }
@@ -120,13 +120,12 @@
     </page_footer>
     <table cellspacing="0" style="width: 100%;">
         <tr>
-            <td style="width: 23%; color: #444444;">
-                <img style="width: 100%;" src="uploads/empresa/<?php echo $ruta_logo?>" alt="Logo"><br>
+            <td style="width: 23%;height:20%; color: #444444;">
+                <img style="width: 100%" src="uploads/empresa/<?php echo $ruta_logo?>" alt="Logo"><br>
             </td>
 			<td style="width: 55%; color: #34495e;font-size:14px;text-align:center;padding:3% 10% 3% 4%">
                 <span style="color: #34495e;font-size:20px;font-weight:bold"> <?php echo $nombre_sucursal;?></span>
-				<br><?php echo $direccion_sucursal;?><br> 
-				RUC: <?php echo $ruc_sucursal;?><br>
+				<br><?php echo $direccion_sucursal;?><br>
 				CEL: <?php echo $telefono_sucursal;?><br>
 				E-MAIL: <?php echo $email_sucursal;?>
             </td>
@@ -158,7 +157,7 @@
 	<br>
 	<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
 		<tr>
-			<td style="width:35%;" class='midnight-blue'>USUARIO</td>
+			<td style="width:35%;" class='midnight-blue'>MÉDICO</td>
 			<td style="width:25%;" class='midnight-blue'>FECHA</td>
 			<td style="width:40%;" class='midnight-blue'>FORMA DE PAGO</td>
 		</tr>
